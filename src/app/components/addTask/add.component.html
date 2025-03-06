@@ -1,0 +1,12 @@
+<h1>Numero de tareas: {{ numberTask }}</h1>
+<span>Titulo tarea {{ titleTask }}</span>
+
+<div class="container_input">
+  <input
+    (input)="sendTask()"
+    type="text"
+    placeholder="Ingresar tarea"
+    [(ngModel)]="titleTask"
+  />
+  <button (click)="sendTask()" [disabled]="activeButton">Ingresar tarea</button>
+</div>
