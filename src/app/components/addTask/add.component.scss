@@ -22,4 +22,17 @@ button{
     border: none;
    outline: none;
    color: black;
+
+   &:not(:disabled){
+         background-color: #2662e2;;
+       color: white;;
+       &:hover{
+           background-color: #1141aa;
+       }
+   }
+   &:disabled {
+    background-color: #bdc3c7;
+    color: #7f8c8d;
+    cursor: not-allowed;
+  }
 }
