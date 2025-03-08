@@ -9,6 +9,13 @@ import {NgForm, FormBuilder, FormGroup, FormControl, Validators} from "@angular/
 })
 
 export class AddComponent implements OnInit {
+  
+  numberTask: number = 11;
+   isActive: boolean = false;
+   taskActive!: boolean;
+
+   tasks: any[] = ['tarea 1', 'tarea 2' , 'tarea 3']
+
 
   constructor( private fb: FormBuilder) {}
 
@@ -21,29 +28,17 @@ form! : FormGroup;
     }
   
   sendTaskTitle(): void {
-    if(this.form.valid){
-      console.log(this.form.value.title);
+    if(this.form.valid && this.form.get('title')?.value!==''){
+      this.taskActive = false;
+
+      console.log(this.form.value.title + 'mamamiaa' );
+    }else{
+    this.taskActive=true
     }
   }
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //! -------------------------------------------------------------
-   numberTask: number = 10;
    titleTask: string ='';
    activeButton: boolean = true;
 
